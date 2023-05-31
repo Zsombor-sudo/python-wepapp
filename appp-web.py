@@ -11,10 +11,12 @@ import pickle
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 import streamlit as st
+import requests
 
 #loading the saved model
-loaded_model = pickle.load(open('D:/SULI/EGYETEM/bevgépi tanulás/proj/web/trained_model_jobs.sav','rb'))
-
+model_url='https://github.com/Zsombor-sudo/python-wepapp/blob/main/trained_model_jobs.sav'
+response = requests.get(model_url)
+loaded_model = pickle.loads(response.content)
 #creating a function
 
 def my_prediction(input_data):
