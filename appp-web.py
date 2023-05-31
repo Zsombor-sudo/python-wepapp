@@ -4,6 +4,7 @@ Created on Wed May 31 04:05:20 2023
 
 @author: szzso
 """
+pip install sklearn
 
 import numpy as np
 import pickle
