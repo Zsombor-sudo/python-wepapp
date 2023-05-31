@@ -12,14 +12,13 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 import streamlit as st
 import requests
-import io
+import os
 
 #loading the saved model
-model_url='https://github.com/Zsombor-sudo/python-wepapp/blob/main/trained_model_jobs.sav'
-response = requests.get(model_url)
-content = response.content
-file_obj = io.BytesIO(content)
-loaded_model = pickle.load(file_obj)
+script_path = os.path.dirname(os.path.abspath(__file__))
+# Load the model from the file in the same directory as the script
+model_path = os.path.join(script_path, 'trained_model_jobs.sav')
+loaded_model = pickle.load(open(model_path, 'rb'))
 
 #creating a function
 
