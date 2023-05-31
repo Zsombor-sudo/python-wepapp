@@ -16,7 +16,7 @@ import requests
 #loading the saved model
 model_url='https://github.com/Zsombor-sudo/python-wepapp/blob/main/trained_model_jobs.sav'
 response = requests.get(model_url)
-loaded_model = pickle.loads(response.content)
+loaded_model = pickle.load(response.content)
 #creating a function
 
 def my_prediction(input_data):
